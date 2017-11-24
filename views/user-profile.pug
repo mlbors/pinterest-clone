@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  if (typeof data !== 'unedfined' && data !== null)
+    div.row
+      div.col-md-12
+        h2 Info
+
+    div.row
+      div.col-md-12
+        p <strong>Name :</strong> #{data.displayName}
+        p <strong>Username :</strong> #{data.username}
+        p <strong>Bio :</strong> #{data.bio}
+        if (auth && data._id === user._id)
+          p
+            a(class='btn btn-primary' href='/users/edit-profile/' + data._id) Edit profile
+
+    div.row
+      div.col-md-12
+        h2 Pins
+
+    div.row
+      div.col-md-12
+        include list.pug
+  else
+    div.row
+      div.col-md-12
+        p This profile doesn't exist

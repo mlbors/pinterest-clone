@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+  body
+
+    div.header
+
+      nav.navbar.navbar-default
+        div.container
+          div.navbar-header
+            button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a(class='navbar-brand' href='/') Pinterest Clone
+
+          div(class='collapse navbar-collapse' id='navbar-collapse')
+            ul.nav.navbar-nav
+              li
+                a(class='home' href='/') Home
+              if auth
+                li
+                  a(class='add-pin' href='/pins/add-pin') Add pin
+                li
+                  a(class='my-account' href='/users/profile/' + user.username) My account
+              li
+                if auth
+                  a(class='logout' href='/logout') Log Out
+                else
+                  a(class='login' href='/auth/twitter') Log In
+
+    div(id='main' class='container')
+
+      div.row
+        div.col-md-12
+          h1= title
+
+      div(id='message-info')
+        div.row
+          div.col-md-12
+            div.content
+              p
+
+      if error
+        div.row
+          div.col-md-12
+            div.alert.danger
+              p= error
+
+      if message
+        div.row
+          div.col-md-12
+            div.alert.success
+              p= message
+
+      block content
+
+    div(id='footer' class='footer')
+      div.container
+        div.row
+          div.col-md-12
+            p 
+              small Pinterest Clone
+
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js')
+    script(src='/js/actions-handler.js')
+    script(src='/js/ui-handler.js')
+    script(src='/js/users-handler.js')
+    script(src='/js/main.js')

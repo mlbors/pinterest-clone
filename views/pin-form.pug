@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+  if auth
+    div.row
+      div.col-md-12
+        form(id='pin-form' class='action-form' method='POST' data-action=dataAction action=action)
+          div.form-group
+            label(for='title') Title
+            - var titleValue = (pin !== null && pin.title !== null) ? pin.title : ''
+            input.form-control(type='text' id='title' name='title' placeholder='Title' value=titleValue)
+          if pin === null
+            div.form-group
+              label(for='image') Image URL
+              input.form-control(type='text' id='image' name='image' placeholder='Image URL')
+          div.form-group
+            label(for='description') Description
+            - var descriptionValue = (pin !== null && pin.description !== null) ? pin.description : ''
+            textarea.form-control(id='description' name='description' placeholder='Description') #{descriptionValue}
+          if pin !== null
+            input.form-control(type='hidden' id='pin' name='pin' value=pin._id)
+          input(type='submit' name='submit' id='submit' class='btn btn-primary' value=submit)
+  else
+    p You can't view this content
+
+

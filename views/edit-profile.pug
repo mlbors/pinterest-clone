@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  if auth && user._id === data._id
+    div.row
+      div.col-md-12
+        form(id='profil-form' class='action-form' method='POST' data-action='save-profile' action='/users/save-profile')
+          div.form-group
+            label(for='bio') Bio
+            textarea.form-control(id='bio' name='bio' placeholder='Bio') #{data.bio}
+          input.form-control(type='hidden' id='username' name='username' value=data.username)
+          input(type='submit' name='submit' id='submit' class='btn btn-primary' value='Edit profile')
+  else
+    p You can't view this content
+

@@ -1,2 +1,1 @@
-# pinterest-clone
-pinterest-clone
+Repository for freeCodeCamp - Back End Development Certification - Dynamic Web Application Projects - Pinterest Clone

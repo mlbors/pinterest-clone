@@ -1,0 +1,111 @@
+/**
+ * freeCodeCamp - Back End Development Certification - Dynamic Web Application Projects
+ * Style
+ * 
+ * @author MLBORS
+ * @version 1.0.0.0
+ * @since 2017.24.11
+ * @for freeCodeCamp
+ */
+
+/*****************/
+/***** STYLE *****/
+/*****************/
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+img.responsive-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+#main .row {
+  margin-bottom: 30px;
+}
+
+#main .row:last-of-type {
+  margin-bottom: 0;
+}
+
+#main ul {
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+#main ul li {
+  margin-bottom: 6px;
+}
+
+#main ul li:last-of-type {
+  margin-bottom: 0;
+}
+
+#main form ul {
+  padding-left: 15px;
+  list-style-type: none;
+}
+
+#main #message-info {
+  display: none;
+  margin-bottom: 30px;
+}
+
+#main #message-info .content {
+  padding: 15px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#main #message-info .content p {
+  margin-bottom: 0;
+}
+
+#footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.grid-item {
+  float: left;
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 20%; 
+  margin-bottom: 10px;
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-item img,
+.grid-item h3,
+.grid-item p {
+  margin-bottom: 15px;
+}
+
+.grid-item p:last-of-type {
+  margin-bottom: 0;
+}
+
+.grid-item .btn {
+  margin-right: 5px;
+}
+
+.grid-item .like-actions .like {
+  color: #3e3e3e;
+}
+
+.grid-item .like-actions .dislike {
+  color: #ec1c49;
+}

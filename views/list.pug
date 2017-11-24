@@ -1,0 +1,30 @@
+if (pins && pins.length)
+  div(id='pins-list' class='grid')
+    div.grid-sizer
+    each pin in pins
+      if typeof pin !== 'undefined'
+        div(id=pin._id class='grid-item')
+          if pin.image
+            a(href=pin.image target='_blank')
+              img(class='pin-image' src=pin.image)
+          else
+            img(src='http://via.placeholder.com/320x240')
+          h3= pin.title
+          p= pin.description
+          if auth
+            p.like-actions
+              if typeof pin.favorites === 'undefined' || pin.favorites.indexOf(user._id) === -1
+                a(class='like action' href='#' data-action='like-pin' data-id=pin._id)
+                  span(class='glyphicon glyphicon-heart' aria-hidden='true')
+              else
+                a(class='dislike action' href='#' data-action='dislike-pin' data-id=pin._id)
+                  span(class='glyphicon glyphicon-heart' aria-hidden='true')
+          if typeof pin.user !== 'undefined'
+            p
+              if auth && pin.user === user._id
+                a(class='btn btn-primary' href='pins/edit/' + pin._id) Edit
+                a(class='btn btn-danger action' href='#' data-action='delete-pin' data-id=pin._id) Delete
+            p
+              <small>#{pin.userData.displayName}</small>
+else
+  p No pins!
